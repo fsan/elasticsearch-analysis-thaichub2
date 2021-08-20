@@ -17,6 +17,20 @@
  * under the License.
  */
 
+/*
+Some permissions have been removed from jdk 9+
+    java.security.AllPermission
+    java.security.ServicePermission
+    java.security.FilePermission
+    java.security.PrivateCredentialPermission
+    java.security.MBeanPermission
+    java.security.SocketPermission
+    java.security.UnresolvedPermission
+
+It seems we only need BasicPermission for this plugin.
+
+*/
+
 grant {
-    permission java.security.AllPermission "*";
+    permission java.security.BasicPermission "*";
 };
